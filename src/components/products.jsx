@@ -7,7 +7,6 @@ import Tab from '@mui/material/Tab';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useTheme } from "@mui/material/styles";
-import SwipeableViews from "react-swipeable-views";
 import { Box } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 
@@ -62,44 +61,6 @@ export const Products = (props) => {
                 <Tab label="Item Seven" {...a11yProps(6)} />
             </Tabs>
             </AppBar>
-            <SwipeableViews axis={theme.direction === "rtl" ? "x-reverse" : "x"}index={value} onChangeIndex={handleChange}>
-                <TabPanel value={value} index={0} width={'auto'}>
-                    <ImageList
-                    sx={{ width: 500, height: 450 }}
-                    variant="quilted"
-                    cols={4}
-                    rowHeight={121}
-                    >
-                    {polos.map((item) => (
-                        <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-                        <img
-                            {...srcset(item.img, 121, item.rows, item.cols)}
-                            alt={item.title}
-                            loading="lazy"
-                        />
-                        </ImageListItem>
-                    ))}
-                    </ImageList>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    Item Two
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    Item Three
-                </TabPanel>
-                <TabPanel value={value} index={3}>
-                    Item Four
-                </TabPanel>
-                <TabPanel value={value} index={4}>
-                    Item Five
-                </TabPanel>
-                <TabPanel value={value} index={5}>
-                    Item Six
-                </TabPanel>
-                <TabPanel value={value} index={6}>
-                    Item Seven
-                </TabPanel>
-            </SwipeableViews>
             </Box>
         </div>
         </div>
